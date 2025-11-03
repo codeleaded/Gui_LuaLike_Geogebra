@@ -20,7 +20,7 @@ $(TARGET): $(SRCS)
 	$(CC) $(CFLAGS) $(INCLUDES) $(SRCS) -o $(TARGET) $(LDFLAGS)
 
 exe:
-	$(TARGET) ./code/Pong.ll
+	$(TARGET)
 
 clean:
 	if exist "$(BUILD_DIR)" del /Q "$(BUILD_DIR)\*"
