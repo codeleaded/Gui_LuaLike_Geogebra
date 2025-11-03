@@ -25,10 +25,10 @@ alldebug:
 	$(CC) -g $(CFLAGS) $(INCLUDES) ./$(SRC_DIR)/Main.c -o ./$(TARGET) $(LDFLAGS) 
 
 debug:
-	gdb ./$(TARGET) ./code/Pong.ll
+	gdb ./$(TARGET)
 
 exe:
-	./$(TARGET) ./code/Pong.ll
+	./$(TARGET)
 
 clean:
 	rm -rf $(BUILD_DIR)/*

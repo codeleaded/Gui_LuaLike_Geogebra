@@ -16,10 +16,10 @@ alldebug:
 	$(CC) -g $(CFLAGS) $(INCLUDES) ./$(SRC_DIR)/Main.c -o ./$(TARGET) $(LDFLAGS) 
 
 debug:
-	WINEPREFIX=~/wine64 WINEARCH=win64 winedbg $(TARGET) ./code/Pong.ll
+	WINEPREFIX=~/wine64 WINEARCH=win64 winedbg $(TARGET)
 
 run: $(TARGET)
-	WINEPREFIX=~/wine64 WINEARCH=win64 wine $(TARGET) ./code/Pong.ll
+	WINEPREFIX=~/wine64 WINEARCH=win64 wine $(TARGET)
 
 clean:
 	rm -f $(BUILD_DIR)/*
