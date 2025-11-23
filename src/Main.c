@@ -14,11 +14,18 @@ LuaLike ll;
 void Setup(AlxWindow* w){
 	ll = LuaLike_New("./code/Main.ll","./bin");
 	tv = TransformedView_New((Vec2){ GetWidth(),GetHeight() });
+
+	ResizeAlxFont(8,8);
 }
 
 void Update(AlxWindow* w){
     tv.ZoomSpeed = 1.0f * w->ElapsedTime;
 	TransformedView_HandlePanZoom(&tv,window.Strokes,GetMouse());
+
+	if(Stroke(ALX_KEY_ENTER).PRESSED){
+		Enviroment_ClearScript(&ll.ev);
+		Enviroment_Script(&ll.ev,"./code/Main.ll");
+	}
 
 	Clear(BLACK);
 
@@ -67,7 +74,7 @@ void Delete(AlxWindow* w){
 }
 
 int main(){
-    if(Create("LL - Geogebra",1920,1080,1,1,Setup,Update,Delete))
+    if(Create("LL - Geogebra",600,400,4,4,Setup,Update,Delete))
         Start();
     return 0;
 }
