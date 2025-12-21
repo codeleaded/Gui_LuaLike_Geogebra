@@ -74,7 +74,7 @@ void Delete(AlxWindow* w){
 }
 
 int main(){
-    if(Create("LL - Geogebra",600,400,4,4,Setup,Update,Delete))
+    if(Create("LL - Geogebra",1900,1000,1,1,Setup,Update,Delete))
         Start();
     return 0;
 }
